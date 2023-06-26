@@ -1,0 +1,70 @@
+body{
+    text-align: center;
+}
+
+/* Buttons */
+
+button{
+    padding: 10px 30px 10px 30px;
+    border: none;
+    color: #fff;
+    background-color: red;
+    cursor: pointer;
+    display: inherit;
+    margin: auto;
+    width: 180px;
+    font-size: 14px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+button#increment-btn {
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+p#save-el {
+    font-size: 18px;
+    padding: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Fonts */
+h1, h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+p {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+span {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Cal-Font */
+p#no1 {
+    border-bottom: 1px solid;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+p#no2 {
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+
+.btn {
+    display: inline-block;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
