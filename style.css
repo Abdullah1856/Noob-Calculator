@@ -17,17 +17,6 @@ button{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-button#increment-btn {
-    margin-bottom: 15px;
-}
-
-/* Paragraph */
-p#save-el {
-    font-size: 18px;
-    padding: 10px;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
 /* Fonts */
 h1, h2 {
     font-family: 'Roboto Condensed', sans-serif;
