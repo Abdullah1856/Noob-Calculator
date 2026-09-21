@@ -1,5 +1,7 @@
-let num1 = 8
-let num2 = 2
+// let num1 = 8
+// let num2 = 2
+let num1;
+let num2;
 let sumTxt = "Sum: "
 document.getElementById("no1").textContent = num1
 document.getElementById("no2").textContent = num2
