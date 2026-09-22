@@ -1,29 +1,42 @@
-let num1 = 8
-let num2 = 2
-let sumTxt = "Sum: "
-document.getElementById("no1").textContent = num1
-document.getElementById("no2").textContent = num2
+let sumTxt = "Sum: ";
 
-let result1 = document.getElementById("sum") 
-function add () {
-    let result = num1 + num2
-    result1.textContent = "Sum: " + result
+// Target the single element where the result will be displayed
+let resultEl = document.getElementById("sum");
+
+function add() {
+    // Move these inside so they read the numbers right when the button is clicked
+    let num1 = Number(document.querySelector("#quantity1").value);
+    let num2 = Number(document.querySelector("#quantity2").value);
+    
+    let result = num1 + num2;
+    resultEl.textContent = "Sum: " + result;
 }
 
-let result2 = document.getElementById("sum")
-function subtract () {
-    let result = num1 - num2
-    result1.textContent = "Sum: " + result
+function subtract() {
+    let num1 = Number(document.querySelector("#quantity1").value);
+    let num2 = Number(document.querySelector("#quantity2").value);
+    
+    let result = num1 - num2;
+    resultEl.textContent = "Difference: " + result; 
 }
 
-let result3 = document.getElementById("sum")
-function divide () {
-    let result = num1 / num2
-    result3.innerText = "Sum: " + result
+function divide() {
+    let num1 = Number(document.querySelector("#quantity1").value);
+    let num2 = Number(document.querySelector("#quantity2").value);
+    
+    if (num2 === 0) {
+        resultEl.textContent = "Cannot divide by zero!";
+    } else {
+        let result = num1 / num2;
+        resultEl.textContent = "Quotient: " + result;
+    }
 }
 
-let result4 = document.getElementById("sum")
-function multiply () {
-    let result = num1 * num2
-    result4.textContent = "Sum: " + result
+function multiply() {
+    let num1 = Number(document.querySelector("#quantity1").value);
+    let num2 = Number(document.querySelector("#quantity2").value);
+    
+    let result = num1 * num2;
+    resultEl.textContent = "Product: " + result;
 }
+ 
