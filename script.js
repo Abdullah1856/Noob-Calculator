@@ -1,42 +1,58 @@
-let sumTxt = "Sum: ";
-
 // Target the single element where the result will be displayed
-let resultEl = document.getElementById("sum");
+const resultEl = document.getElementById("sum");
 
-function add() {
-    // Move these inside so they read the numbers right when the button is clicked
-    let num1 = Number(document.querySelector("#quantity1").value);
-    let num2 = Number(document.querySelector("#quantity2").value);
-    
-    let result = num1 + num2;
-    resultEl.textContent = "Sum: " + result;
+// --- 1. Pure Arithmetic Functions (Reusable) ---
+function add(num1, num2) {
+    return num1 + num2;
 }
 
-function subtract() {
-    let num1 = Number(document.querySelector("#quantity1").value);
-    let num2 = Number(document.querySelector("#quantity2").value);
-    
-    let result = num1 - num2;
-    resultEl.textContent = "Difference: " + result; 
+function subtract(num1, num2) {
+    return num1 - num2;
 }
 
-function divide() {
-    let num1 = Number(document.querySelector("#quantity1").value);
-    let num2 = Number(document.querySelector("#quantity2").value);
-    
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+function divide(num1, num2) {
     if (num2 === 0) {
-        resultEl.textContent = "Cannot divide by zero!";
-    } else {
-        let result = num1 / num2;
-        resultEl.textContent = "Quotient: " + result;
+        return "Cannot divide by zero!";
     }
+    return num1 / num2;
 }
 
-function multiply() {
-    let num1 = Number(document.querySelector("#quantity1").value);
-    let num2 = Number(document.querySelector("#quantity2").value);
+// --- 2. Centralized Handler (Reads UI and Updates DOM) ---
+function handleCalculation(operation) {
+    // Read the inputs fresh when a button is clicked
+    const n1 = Number(document.querySelector("#quantity1").value);
+    const n2 = Number(document.querySelector("#quantity2").value);
     
-    let result = num1 * num2;
-    resultEl.textContent = "Product: " + result;
+    let result;
+    let label = "";
+
+    switch(operation) {
+        case 'add':
+            result = add(n1, n2);
+            label = "Sum: ";
+            break;
+        case 'subtract':
+            result = subtract(n1, n2);
+            label = "Difference: ";
+            break;
+        case 'multiply':
+            result = multiply(n1, n2);
+            label = "Product: ";
+            break;
+        case 'divide':
+            result = divide(n1, n2);
+            // If the return is the error string, don't prefix with "Quotient: "
+            if (typeof result === "string") {
+                resultEl.textContent = result;
+                return;
+            }
+            label = "Quotient: ";
+            break;
+    }
+
+    resultEl.textContent = label + result;
 }
- 
