@@ -50,10 +50,40 @@ p#no2 {
     justify-content: center;
     padding-bottom: 15px;
     font-family: 'Roboto Condensed', sans-serif;
+    gap: 10px;
+}
+
+.numbers input {
+    width: 20px;
+    border-color: #ff0000 !important;
+    padding: 7px 8px;
+    border-bottom: 1px solid;
 }
 
 .result {
     display: flex;
     justify-content: center;
     padding-top: 30px;
+}
+
+/* Chrome, Safari, Edge, and Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Removes the default border in its normal state */
+input {
+  border: none;
+}
+
+/* Removes the blue/black highlight outline when the user clicks inside */
+input:focus {
+  outline: none;
 }
